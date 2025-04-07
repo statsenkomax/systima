@@ -1,0 +1,27 @@
+{
+  "name": "systima",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/statsenkomax/systima#readme",
+  "bugs": {
+    "url": "https://github.com/statsenkomax/systima/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/statsenkomax/systima.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {},
+  "devDependencies": {
+    "@playwright/test": "^1.51.1",
+    "@types/node": "^22.14.0",
+    "prettier": "3.5.3"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^9.6.0",
+    "dotenv": "^16.4.7"
+  }
+}
