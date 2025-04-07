@@ -28,6 +28,7 @@ the demo purpose test cases are created on https://app.staging.systima.no/ site
    ```
    npx playwright install
    ```
+4. Add Login and Password into .env file
 3. In root project directory to execute below command to run all UI tests
    ```
    npx playwright test
