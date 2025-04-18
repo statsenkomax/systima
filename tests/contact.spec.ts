@@ -1,4 +1,4 @@
-import { test } from "../fixtures/base.page";
+import { test } from "../fixtures/fixture";
 
 test.beforeEach(async ({ contactPage }) => {
   await contactPage.goto();

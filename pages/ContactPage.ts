@@ -1,8 +1,8 @@
-import { expect, Page } from "@playwright/test";
-import getBackgroundColor from "../utils/fieldUtils";
+import {Browser, BrowserContext, expect, Page} from "@playwright/test";
+import BasePage from "./BasePage";
 
-export class ContactPage {
-  private page: Page;
+export class ContactPage extends BasePage{
+
   private nyContactButton = () =>
     this.page.getByRole("button", { name: "NY KONTAKT" });
   private opprettContactButton = () =>
@@ -13,7 +13,7 @@ export class ContactPage {
   private successPopUp = () => this.page.getByText("Ny kontakt lagret.");
 
   constructor(page: Page) {
-    this.page = page;
+    super(page);
   }
 
   public async goto() {
@@ -34,7 +34,7 @@ export class ContactPage {
   }
 
   public async assertNavnErrorMessageIsRed() {
-    expect(await getBackgroundColor(this.navnErrorMessage())).toBe(
+    expect(await this.getBackgroundColor(this.navnErrorMessage())).toBe(
       "rgb(255, 82, 82)",
     );
   }

@@ -1,4 +1,4 @@
-import { test } from "../fixtures/base.page";
+import { test } from "../fixtures/fixture";
 import { faker } from "@faker-js/faker";
 
 test.beforeEach(async ({ loginPage, context }) => {

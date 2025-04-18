@@ -1,8 +1,7 @@
 import { expect, Page } from "@playwright/test";
-import getBackgroundColor from "../utils/fieldUtils";
+import BasePage from "./BasePage";
 
-export class FakturadetaljerPage {
-  private page: Page;
+export class FakturadetaljerPage extends BasePage{
   private contactButton = () =>
     this.page.getByRole("button", { name: "Kontakt (valgfri ved kvittering)" });
   private accountButton = () =>
@@ -21,7 +20,7 @@ export class FakturadetaljerPage {
     this.page.getByText("Fakturanr. er allerede bokført");
 
   constructor(page: Page) {
-    this.page = page;
+    super(page);
   }
 
   public async goto() {
@@ -72,7 +71,7 @@ export class FakturadetaljerPage {
 
   public async assertInvoiceNumberErrorMessageIsVisibleAndRed() {
     await expect(this.invoiceNumberErrorMessage()).toBeVisible();
-    expect(await getBackgroundColor(this.invoiceNumberErrorMessage())).toBe(
+    expect(await this.getBackgroundColor(this.invoiceNumberErrorMessage())).toBe(
       "rgb(255, 82, 82)",
     );
   }
